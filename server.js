@@ -80,13 +80,12 @@ passport.use(new FacebookStrategy({
     clientID: process.env.FB_CLIENT_ID,
     clientSecret: process.env.FB_CLIENT_SECRET,
     callbackURL: "https://chat-chat-chat-p.herokuapp.com/login/facebook/pxl8",
-    profileFields: ['id', 'first_name', 'last_name', 'email', 'picture.type(large)', 'friends']
+    profileFields: ['id', 'first_name', 'last_name', 'email', 'picture.type(large)']
   }, (accessToken, refreshToken, profile, cb) => {
     User.findOrCreate({
       first_name: profile._json.first_name,
       last_name: profile._json.last_name,
       image: profile.photos[0].value,
-      friends: profile._json.friends.summary.total_count,
       email: profile._json.email,
       facebookId: profile.id
     }, function (err, user) {
@@ -95,9 +94,7 @@ passport.use(new FacebookStrategy({
   }
 ))
 
-app.get('/login/facebook', passport.authenticate('facebook', {
-  scope: ['user_friends']
-}))
+app.get('/login/facebook', passport.authenticate('facebook'))
 
 app.get('/login/facebook/pxl8',
   passport.authenticate('facebook', { failureRedirect: '/' }),
