@@ -79,7 +79,7 @@ passport.deserializeUser((id, done) => {
 passport.use(new FacebookStrategy({
     clientID: process.env.FB_CLIENT_ID,
     clientSecret: process.env.FB_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/login/facebook/pxl8",
+    callbackURL: "https://chat-chat-chat-p.herokuapp.com/login/facebook/pxl8",
     profileFields: ['id', 'first_name', 'last_name', 'email', 'picture.type(large)', 'friends']
   }, (accessToken, refreshToken, profile, cb) => {
     User.findOrCreate({
