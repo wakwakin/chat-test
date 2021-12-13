@@ -41,7 +41,7 @@ app.use(passport.session())
 
 // database
 mongoose.connect(process.env.MONGOOSE_URI).then(() => {
-  httpServer.listen(3000)
+  httpServer.listen(process.env.PORT)
 })
 
 const userSchema = new mongoose.Schema({
