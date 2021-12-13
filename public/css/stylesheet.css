@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: arial;
+}
+.container {
+  width: 100vw;
+}
+.container-flex {
+  display: flex;
+}
+.flex-center {
+  justify-content: center;
+}
+.flex-center-center {
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.btn {
+  text-decoration: none;
+  width: 68px;
+  height: 66px;
+  overflow: hidden;
+  transition: width 0.5s;
+}
+.btn-lg {
+  font-size: 20px;
+}
+.btn-facebook {
+  padding: 20px 25px;
+  background-color: #333;
+  color: #FFF;
+  transition: background 0.5s;
+}
+.btn-border {
+  border-style: solid;
+  color: #333;
+}
+.btn-facebook-hook:hover .btn-facebook {
+  background-color: #3B5998;
+}
+.btn-facebook-hook:hover {
+  width: 265px;
+}
+.message-bubble {
+  width: 100vw;
+  height: calc(100vh - 118px);
+  overflow-y: scroll;
+}
+.message-inputs {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+.message-bubble span {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 30px;
+}
+#your-message {
+  width: 100%;
+  padding: 10px;
+  font-size: 2rem;
+  border-width: 1px;
+}
+#send-message {
+  width: 100%;
+  padding: 10px;
+  font-size: 2rem;
+  border-width: 1px;
+}
