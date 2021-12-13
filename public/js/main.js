@@ -1,4 +1,4 @@
-const socket = new WebSocket(`ws://${ window.location.hostname }:${ window.location.port }`)
+const socket = new WebSocket(`wss://${ window.location.hostname }:${ window.location.port }`)
 fetchMessage()
 
 socket.onmessage = ({ data }) => {
